@@ -6,7 +6,9 @@ import {
     autenticar,
     olvidePassword,
     nuevoPassword,
-    comprobarToken
+    comprobarToken,
+    actualizarPerfil,
+    actualizarPassword
 } from '../controllers/veterinarioController.js'
 import chekAuth from "../middlwere/authMiddlewere.js";
 
@@ -23,6 +25,8 @@ router.post('/olvide-password/:token', nuevoPassword)
 
 // Area Privada
 router.get('/perfil', chekAuth, perfil);
+router.put('/perfil/:id', chekAuth, actualizarPerfil )
+router.put('/actualizar-password', chekAuth, actualizarPassword)
 
 
 export default router;
